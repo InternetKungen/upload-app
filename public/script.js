@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
   if (!file) return alert("Välj en fil först!");
 
   // --- Anpassa chunk-storlek för testning ---
-  const CHUNK_SIZE = 10 * 1024 * 1024; // 10MB per chunk
+  const CHUNK_SIZE = 3 * 1024 * 1024; // 3MB per chunk
   const totalChunks = Math.ceil(file.size / CHUNK_SIZE);
 
   spinner.style.display = "block";
@@ -34,7 +34,11 @@ form.addEventListener("submit", async (e) => {
     formData.append("chunkIndex", i);
     formData.append("totalChunks", totalChunks);
 
-    await fetch("/upload-chunk", { method: "POST", body: formData });
+    const res = await fetch("/upload-chunk", {
+      method: "POST",
+      body: formData,
+    });
+    if (!res.ok) throw new Error(`Chunk ${i} misslyckades: ${res.status}`);
 
     const percent = Math.round(((i + 1) / totalChunks) * 100);
     progressBar.style.width = percent + "%";

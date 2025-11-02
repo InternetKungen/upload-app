@@ -1,10 +1,11 @@
 :root {
-  --primary-color: #EB9486;
-  --secondary-color: #F3DE8A;
-  --third-color: #CAE7B9;
-  --background-gradient: linear-gradient(to top, #97A7B3, #7E7F9A);
+  --primary-color: #eb9486;
+  --secondary-color: #f3de8a;
+  --third-color: #cae7b9;
+  --background-gradient: linear-gradient(to top, #97a7b3, #7e7f9a);
   --text-color: #ffffff;
-  --text-stroke: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  --text-stroke: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 body {
@@ -24,8 +25,7 @@ body {
   font-optical-sizing: auto;
   font-weight: 300;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
+  font-variation-settings: "wdth" 100;
 }
 
 .logo {
@@ -51,8 +51,7 @@ h2 {
   font-family: "Tourney", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-variation-settings:
-    "wdth" 100
+  font-variation-settings: "wdth" 100;
 }
 
 .upload-form {
@@ -64,7 +63,11 @@ h2 {
   outline: 2px solid var(--primary-color);
   padding: 20px;
   border-radius: 10px;
-  background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
   transition: box-shadow 0.3s ease, outline 0.3s ease, outline-offset 0.3s ease;
 }
 
@@ -80,7 +83,11 @@ h2 {
   padding: 10px;
   border: 1px solid var(--third-color);
   border-radius: 5px;
-  background: linear-gradient(to left, var(--secondary-color), var(--third-color));
+  background: linear-gradient(
+    to left,
+    var(--secondary-color),
+    var(--third-color)
+  );
   color: #000;
   cursor: pointer;
 }
@@ -159,6 +166,7 @@ h2 {
 }
 
 #status {
+  display: block;
   position: absolute;
   text-align: center;
   margin-top: 15px;
